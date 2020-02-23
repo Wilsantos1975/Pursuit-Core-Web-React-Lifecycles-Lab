@@ -1,27 +1,29 @@
-import React from 'react';
-import './App.css';
-import Form from '../src/components/form'
-import Tasks from './components/tasksIndex';
-
+import React from "react";
+import "./App.css";
+import Form from "../src/components/form";
+import TaskIndex from "./components/tasksIndex";
 
 class App extends React.Component {
-  state = {tasks: ["laundry"]};
-    handleAddTasks = (task) => {
+  state = { tasks: [] };
 
-      this.setState()
+  addTask = task => {
+    this.setState(prevState => {
+      // let newArray = [...prevState.tasks];
+      // newArray.push(task)
+      return {
+        tasks: [...prevState.tasks,task]
+      };
+    });
+  };
 
-    }
-    render () {
-      return ( 
-        <div className="App">
-          <Tasks />
-          <Form />
-
-        </div>
-      )
-    };
-
+  render() {
+    return (
+      <div className="App">
+        <Form addTask={this.addTask}/>
+        <TaskIndex tasks={this.state.tasks} />
+      </div>
+    );
+  }
 }
-
 
 export default App;

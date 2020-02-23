@@ -1,4 +1,5 @@
 import React from "react";
+import Task from './taskShown';
 
 // class Tasks extends React.Component {
   //   constructor(props) {
@@ -21,13 +22,13 @@ import React from "react";
 //   }
 // }
 
-const handleTasksShown = (task) => {
-  return tasks.map(task => {
-    return taskShown= (task) => {
+const TaskIndex = (props) => {
+  return props.tasks.map((task,i) => {
+    return <Task task={task} key={props.tasks}/> 
       
-    }
   })
 }
 
 
-export default Tasks;
+
+export default TaskIndex;
