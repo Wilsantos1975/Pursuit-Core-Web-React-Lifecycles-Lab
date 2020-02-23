@@ -1,17 +1,27 @@
 import React from 'react';
 import './App.css';
 import Form from '../src/components/form'
-import Todo from '../src/components/todo'
+import Tasks from './components/tasksIndex';
 
-function App() {
-  return (
-    <div className="App">
 
-    <Form />
-    <Todo />
-      
-    </div>
-  );
+class App extends React.Component {
+  state = {tasks: ["laundry"]};
+    handleAddTasks = (task) => {
+
+      this.setState()
+
+    }
+    render () {
+      return ( 
+        <div className="App">
+          <Tasks />
+          <Form />
+
+        </div>
+      )
+    };
+
 }
+
 
 export default App;
