@@ -15,6 +15,14 @@ class App extends React.Component {
       };
     });
   };
+  
+  deleteTask = task => {
+    this.setState(prevState => {
+      return {
+        tasks: [...prevState.tasks]
+      }
+    })
+  }
 
   render() {
     return (

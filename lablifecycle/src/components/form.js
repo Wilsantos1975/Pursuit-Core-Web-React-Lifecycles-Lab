@@ -2,11 +2,12 @@ import React from "react";
 
 class Form extends React.Component {
   state = { task: "" };
+ 
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.addTask(this.state.task);
-    this.setState({ task: "" });
+    this.setState({ task: "" }); //reset the state
   };
 
   handleChange = e => {
@@ -14,7 +15,6 @@ class Form extends React.Component {
   };
 
   render() {
-    
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
