@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Task = ({task}) => {
+const Task = ({task,id,deleteTask}) => {
     return (
         <>
         <li>{task}</li>
-        <button className="button">del</button>
+        <button className="button" id={id} onClick={deleteTask}>del</button>
         </>
     )
 

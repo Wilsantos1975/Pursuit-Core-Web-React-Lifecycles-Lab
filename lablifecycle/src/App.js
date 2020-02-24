@@ -11,24 +11,27 @@ class App extends React.Component {
       // let newArray = [...prevState.tasks];
       // newArray.push(task)
       return {
-        tasks: [...prevState.tasks,task]
+        tasks: [...prevState.tasks, task]
       };
     });
   };
-  
-  deleteTask = task => {
+
+  deleteTask = e => {
+    let x = e.target.id;
+    debugger
     this.setState(prevState => {
+      prevState.tasks.splice(x,1); 
       return {
-        tasks: [...prevState.tasks]
+        tasks: prevState.tasks
       }
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <Form addTask={this.addTask}/>
-        <TaskIndex tasks={this.state.tasks} />
+        <Form addTask={this.addTask} />
+        <TaskIndex tasks={this.state.tasks} deleteTask={this.deleteTask} />
       </div>
     );
   }
